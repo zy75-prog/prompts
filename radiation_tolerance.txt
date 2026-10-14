@@ -7,7 +7,7 @@ Workflow:
 4. Evaluate threshold displacement energies for each species using fixed-cell recoil MD.
 5. Calculate Frenkel-pair recombination barriers using fixed-cell defect relaxation and climbing-image NEB.
 
-Use the same bulk cell for defect endpoints and NEB images. For finite-temperature MD, establish the bulk lattice at the target temperature first. Check convergence with larger supercells before final conclusions.
+After relaxing the pristine bulk lattice, keep supercell lattice vectors fixed while allowing atomic positions to relax or evolve. Use the same bulk cell for defect endpoints and all NEB images. For finite-temperature recoil MD, equilibrate the pristine bulk at the target temperature and pressure first, then fix the cell during recoil. Check convergence with larger supercells before final conclusions.
 
 Use the approved NOTS environment:
 /scratch/zy75/space_PV/BaCd2P2/.venv
