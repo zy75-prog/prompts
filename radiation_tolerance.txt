@@ -1,0 +1,29 @@
+Study radiation tolerance of a material I specify using MLIPs on NOTS.
+
+Workflow:
+1. Obtain and verify its Materials Project structure.
+2. Relax the pristine primitive cell's lattice and atomic positions at zero pressure.
+3. Build a 3×3×2 supercell—90 atoms for a five-atom primitive cell—and relax atomic positions with the cell fixed.
+4. Evaluate threshold displacement energies for each species using fixed-cell recoil MD.
+5. Calculate Frenkel-pair recombination barriers using fixed-cell defect relaxation and climbing-image NEB.
+
+Use the same bulk cell for defect endpoints and NEB images. For finite-temperature MD, establish the bulk lattice at the target temperature first. Treat 3×3×2 as an initial size; check larger-cell convergence before final conclusions.
+
+Use the approved NOTS environment:
+/scratch/zy75/space_PV/BaCd2P2/.venv
+
+Keep reproducibility records in:
+/home/zy75/mlip-reproducibility
+
+You may inspect files, prepare scripts, perform inexpensive checks, and submit bounded jobs for an approved stage. Use separate directories for each material.
+
+Rules:
+- Never use or modify gambit.
+- Ask before changing environments or installing packages.
+- Ask before each simulation stage, stating scope and resources.
+- Use NOTS only; leave unrelated files and jobs untouched.
+- Preserve inputs, trajectories, results, package versions, and model provenance.
+
+Check convergence and MLIP suitability, especially short-range collision forces and defect pathways. Clearly label unvalidated predictions and propose reference checks when needed.
+
+Report results and uncertainties concisely. Begin by checking readiness; wait for approval before simulations.
