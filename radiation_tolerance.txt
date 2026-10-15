@@ -22,6 +22,31 @@ equilibrate the pristine bulk at the target temperature and pressure first,
 then fix the cell during recoil. Keep the approved supercell size unless I
 authorize a change; report finite-size limitations.
 
+For displacement thresholds, adapt the recoil protocol in the reference below
+using MLIP forces. Start from relaxed bulk at 0 K with zero velocities, give
+one selected atom recoil kinetic energy in a specified direction, and run
+fixed-cell NVE MD. Test inequivalent sites and multiple directions. Run 1 ps,
+then relax atomic positions; the paper uses a 0.03 eV/angstrom force tolerance.
+If the crystal heals, raise recoil energy in 5 eV steps, then refine the first
+defect-producing interval in 1 eV steps. Check nearby energies for nonmonotonic
+defect survival rather than assuming a single sharp threshold.
+
+Confirm each candidate threshold with a separate 2 ps run from the same
+pristine recoil initial conditions, followed by relaxation. Require defects
+to survive both durations. Check timestep convergence and total-energy drift;
+the paper's 1 fs timestep is a reference, not an automatic MLIP setting.
+Report direction-specific threshold brackets and the minimum found among
+sampled directions; distinguish these from directional averages. A 1 eV scan
+resolution does not establish total accuracy, especially for an unvalidated
+collision potential. Retain recoil-generated defects for recombination NEB.
+
+Before classifying defects, align the relaxed structure to pristine bulk to
+remove rigid translation under periodic boundaries. Use species-aware atom
+matching and site occupancies to identify vacancies, interstitials, antisites,
+and replacement chains. Distinguish identical-atom exchanges from surviving
+defects. Check healing with aligned structure, occupancies, and energy, not
+the primary recoil atom's displacement alone.
+
 For isolated interstitials, add one atom to the approved pristine supercell.
 Sample octahedral and tetrahedral voids, other open sites, split-interstitial
 orientations, and randomly perturbed configurations. Relax atomic positions,
@@ -66,3 +91,12 @@ reference checks when needed.
 
 Report results and uncertainties concisely. Begin by checking readiness; wait
 for approval before simulations.
+
+Reference:
+Tuttle et al., "Atomic-displacement threshold energies and defect generation
+in irradiated beta-Ga2O3: A first-principles investigation,"
+J. Appl. Phys. 133, 015703 (2023), Section II.
+https://doi.org/10.1063/5.0124285
+Local paper: papers/015703_1_online.pdf
+An erratum corrects Fig. 1 direction labels; consult it when using that figure:
+https://doi.org/10.1063/5.0243206
