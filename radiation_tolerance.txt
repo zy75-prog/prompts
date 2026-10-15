@@ -88,17 +88,21 @@ and checksum. Keep previous MACE-MPA-0 results separately labeled. Search
 several plausible paths and retain distinct competitive mechanisms; the lowest
 converged sampled barrier is not proof of the globally easiest path.
 
-For DFT benchmarking, select a small representative subset of materials and
-competing MLIP paths. After approval of the DFT scope and settings, calculate
-static energies and forces at all selected MLIP images, including endpoints,
-using consistent settings and relative energies. Compare barrier heights, path
-rankings, and DFT forces. Call this a DFT energy profile along an MLIP path,
-not a DFT minimum-energy path. If disagreement or large DFT forces warrants
-endpoint relaxation or DFT NEB refinement, propose that separately. Do not
-infer charge states from ordinary MACE calculations or call its predictions
-neutral-defect barriers. Specify charge states for DFT; any charged-supercell
-corrections and carrier effects require explicit treatment. Report limitations
-from omitted charge-state changes and electronic effects.
+For DFT benchmarking, use only the final MLIP path selected for each studied
+migration or recombination process. Compare alternative paths with MLIP only;
+select the final path using its converged barrier, physical mechanism, and
+path quality, and state the selection basis. Do not send alternative paths to
+DFT. After approval of DFT settings and scope, calculate static energies and
+forces on all images of that final path, including both endpoints. Use
+consistent settings and relative energies. Compare the DFT and MLIP profiles,
+barriers, and DFT forces. Call this a DFT energy profile along the selected
+MLIP path, not a DFT minimum-energy path. If disagreement or large DFT forces
+warrants endpoint relaxation or DFT NEB refinement, propose that separately.
+Do not infer charge states from ordinary MACE calculations or call its
+predictions neutral-defect barriers. Specify charge states for DFT; charged-
+supercell corrections and carrier effects require explicit treatment. Report
+limitations from omitted charge-state changes and from selecting the path with
+MLIP alone.
 
 Use the approved platform and existing environment; confirm the destination
 before submitting work. Available environments:
