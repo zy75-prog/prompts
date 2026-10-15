@@ -26,9 +26,11 @@ For displacement thresholds, adapt the recoil protocol in the reference below
 using MLIP forces. Start from relaxed bulk at 0 K with zero velocities, give
 one selected atom recoil kinetic energy in a specified direction, and run
 fixed-cell NVE MD. Test inequivalent sites and multiple directions. Run 1 ps,
-then relax atomic positions; the paper uses a 0.03 eV/angstrom force tolerance.
+then relax atomic positions; the paper uses a 0.03 eV/angstrom force
+tolerance.
 If the crystal heals, raise recoil energy in 5 eV steps, then refine the first
-defect-producing interval in 1 eV steps. Check nearby energies for nonmonotonic
+defect-producing interval in 1 eV steps. Check nearby energies for
+nonmonotonic
 defect survival rather than assuming a single sharp threshold.
 
 Confirm each candidate threshold with a separate 2 ps run from the same
@@ -98,5 +100,6 @@ in irradiated beta-Ga2O3: A first-principles investigation,"
 J. Appl. Phys. 133, 015703 (2023), Section II.
 https://doi.org/10.1063/5.0124285
 Local paper: papers/015703_1_online.pdf
-An erratum corrects Fig. 1 direction labels; consult it when using that figure:
+An erratum corrects Fig. 1 direction labels; consult it when using that
+figure:
 https://doi.org/10.1063/5.0243206
